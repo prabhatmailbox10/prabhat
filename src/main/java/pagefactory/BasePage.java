@@ -5,5 +5,7 @@ import wrappers.GenericWrappers;
 public abstract class BasePage extends GenericWrappers{
 	
 	public static String firstLeadId;
+	
+	public static String errorMssage;
 
 }

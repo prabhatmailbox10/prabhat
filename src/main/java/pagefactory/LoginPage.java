@@ -17,19 +17,17 @@ public class LoginPage extends BasePage{
 	@FindBy(how = How.ID, using = "username")
 	WebElement uName;
 	
-	public LoginPage typeUserName(){
-		enterValue(uName, "DemoSalesManager");
+	public LoginPage typeUserName(String username){
+		enterValue(uName, username);
 		return this;
 	}
 	
 	@FindBys({
-		@FindBy(how = How.ID, using = "password"),
-		@FindBy(how = How.NAME, using = "PASSWORD")
-	})
-	WebElement password;
+		@FindBy(how = How.ID, using = "password")})
+	WebElement passWd;
 	
-	public LoginPage typePassword(){
-		enterValue(password, "crmsfa");
+	public LoginPage typePassword(String password){
+		enterValue(passWd, password);
 		return this;
 	}
 	

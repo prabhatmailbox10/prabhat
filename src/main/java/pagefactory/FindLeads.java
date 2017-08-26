@@ -11,14 +11,14 @@ public class FindLeads extends BasePage{
 		PageFactory.initElements(eventDriver, this);
 	}
 	
-	@FindBy(how = How.LINK_TEXT, using = "Find Leads")
+	/*@FindBy(how = How.LINK_TEXT, using = "Find Leads")
 	WebElement findLeads;
 	
 	public FindLeads clickFindLeadsShortcut(){
 		
 		clickByLocator(findLeads);
 		return this;
-	}
+	}*/
 	
 	@FindBy(how = How.LINK_TEXT, using = "Phone")
 	WebElement phone;
@@ -39,8 +39,8 @@ public class FindLeads extends BasePage{
 	@FindBy(how = How.NAME, using = "phoneNumber")
 	WebElement honeNumber;
 	
-	public FindLeads enterPhoneNumber(){
-		enterValue(honeNumber, "9790888529");
+	public FindLeads enterPhoneNumber(String phone){
+		enterValue(honeNumber, phone);
 		return this;
 	}
 	
@@ -68,9 +68,25 @@ public class FindLeads extends BasePage{
 		clickByLocator(firstLeadLink);
 		return new ViewLeads();
 	}
+//	
+	@FindBy(how = How.NAME, using = "id")
+	WebElement leadID;
 	
-	@FindBy()
+	public FindLeads putLeadId(String value){
+	    enterValue(leadID, value);//this value will be called from the test case
+		return this;
+	}
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='x-paging-info']")
 	WebElement errorMsg;
+	
+	public FindLeads getErrorMsg(String erMessage){
+		
+		verifyText(errorMsg, erMessage);
+		
+		//errorMssage = getText(errorMsg);
+		return this;
+	}
 	
 	
 	

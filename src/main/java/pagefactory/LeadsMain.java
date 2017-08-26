@@ -11,11 +11,20 @@ public class LeadsMain extends BasePage{
 		PageFactory.initElements(eventDriver, this);
 	}
 	
-	@FindBy(how = How.LINK_TEXT, using = "Leads")
+	/*@FindBy(how = How.LINK_TEXT, using = "Leads")
 	WebElement leads;
 	
 	public FindLeads clickFindLeads(){
 		clickByLocator(leads);
+		return new FindLeads();
+	}*/
+	
+	@FindBy(how = How.LINK_TEXT, using = "Find Leads")
+	WebElement findLeads;
+	
+	public FindLeads clickFindLeadsShortcut(){
+		
+		clickByLocator(findLeads);
 		return new FindLeads();
 	}
 	
@@ -26,5 +35,7 @@ public class LeadsMain extends BasePage{
 		clickByLocator(findLeadsBtn);
 		return new FindLeads();
 	}
+	
+	
 
 }

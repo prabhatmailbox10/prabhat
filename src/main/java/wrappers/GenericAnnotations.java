@@ -48,10 +48,7 @@ public class GenericAnnotations extends GenericWrappers {
 		invokeApp("chrome", url);
 	}
 	
-	@Test
-	public void test(){
-		System.out.println("test():::");
-	}
+	
 	
 	@AfterMethod
 	public void afterMethod(){

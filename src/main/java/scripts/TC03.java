@@ -19,14 +19,14 @@ public class TC03 extends GenericAnnotations{
 		clickByLocator(locateElement("linkText", "Find Leads"));
 		clickByLocator(locateElement("linkText", "Phone"));
 		clearTextField(locateElement("name", "phoneCountryCode"));
-		enterValue(locateElement("name", "phoneNumber"), "9790888529");
+		enterValue(locateElement("name", "phoneNumber"), "9543076486");
 		clickByLocator(locateElement("xpath", "//button[text()='Find Leads']"));
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		String firstLead = getText(locateElement("xpath", "(//a[@class = 'linktext'])[4]"));
+		String firstLead = getText(locateElement("xpath", "(//a[@class = 'linktext'])[4]"));//first resulting lead
 		System.out.println("First Lead in search :: " +firstLead);
 		clickByLocator(locateElement("xpath", "(//a[@class = 'linktext'])[4]"));
 		clickByLocator(locateElement("linkText", "Delete"));

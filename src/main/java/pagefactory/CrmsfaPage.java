@@ -14,10 +14,10 @@ public class CrmsfaPage extends BasePage{
 	@FindBy(how = How.LINK_TEXT, using = "Leads")
 	WebElement crmsfa;
 	
-	public CrmsfaPage clickLeadsTab(){
+	public LeadsMain clickLeadsTab(){
 		clickByLocator(crmsfa);
 		
-		return this;
+		return new LeadsMain();
 	}
 
 }
